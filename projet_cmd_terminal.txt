@@ -1,0 +1,15 @@
+
+#lecture texte pifpaf par middle men
+type tmp_file_pifpaf.txt | python mti805_PyCProject/middleMan.py
+
+#execution openpifpaf et middleman seulement
+python openpifpafwebdemo/server.py | python mti805_PyCProject/middleMan.py
+
+#ecriture angle dans un fichier avec pifpaf+ middleman
+python openpifpafwebdemo/server.py | python mti805_PyCProject/middleMan.py >text_middleman.txt
+
+#execution line test a partir fichier middleman
+type text_middleman.txt | python mti805_PyCProject/LineTest.py
+
+#execution pipeline complet
+python openpifpafwebdemo/server.py | python mti805_PyCProject/middleMan.py | python mti805_PyCProject/LineTest.py 
